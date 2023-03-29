@@ -7,7 +7,7 @@ flags.DEFINE_string("semantic_encoder_name", 'psp_net', 'select a backbone')
 # datasets
 flags.DEFINE_integer('obj_c', 6, 'number of categories')
 flags.DEFINE_string('dataset', 'Real', 'CAMERA or CAMERA+Real')
-flags.DEFINE_string('dataset_dir', '/data1/zrd/datasets1/NOCS/', 'path to the dataset')
+flags.DEFINE_string('dataset_dir', '/home/leech/RBP_Pose/logs/data', 'path to the dataset')
 flags.DEFINE_string('per_obj', '', 'only train an specified object')
 flags.DEFINE_integer('ban_mug', 0, 'not include mug if true')
 flags.DEFINE_float('DZI_PAD_SCALE', 1.5, '')
@@ -58,7 +58,7 @@ flags.DEFINE_integer('per_face_n_of_N', 516 // 6 * 3, 'randomly select 516 // 6 
 
 # train parameters
 # train##################################################
-flags.DEFINE_integer("train", 1, "1 for train mode")
+flags.DEFINE_integer("train", 0, "1 for train mode")
 # flags.DEFINE_integer('eval', 0, '1 for eval mode')
 flags.DEFINE_string('device', 'cuda:0', '')
 # flags.DEFINE_string("train_gpu", '0', "gpu no. for training")
@@ -148,10 +148,10 @@ flags.DEFINE_float('poly_power', 0.9, '')
 # save parameters
 flags.DEFINE_integer('save_every', 10, '')  # save models every 'save_every' epoch
 flags.DEFINE_integer('log_every', 50, '')  # save log file every 100 iterations
-flags.DEFINE_string('model_save', 'output/modelsave_all', 'path to save checkpoint')
+flags.DEFINE_string('model_save', '/home/leech/RBP_Pose/logs/results', 'path to save checkpoint')
 # resume
-flags.DEFINE_integer('resume', 0, '1 for resume, 0 for training from the start')
-flags.DEFINE_string('resume_model', '', 'path to the saved model')
+flags.DEFINE_integer('resume', 1, '1 for resume, 0 for training from the start')
+flags.DEFINE_string('resume_model', '/home/leech/RBP_Pose/logs/torchmodels/model_149.pth', 'path to the saved model')
 flags.DEFINE_integer('resume_prior_only', 1, '1 for resume only prior related module')
 flags.DEFINE_integer('resume_point', 0, 'the epoch to continue the training')
 

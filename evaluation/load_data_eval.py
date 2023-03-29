@@ -38,10 +38,10 @@ class SketchPoseDataset(data.Dataset):
         self.img_size = img_size
         if FLAGS.eval_refine_mug:
             # self.detection_dir = os.path.join(data_dir, 'detection_dualposenet/data/segmentation_results_refine_for_mug')
-            self.detection_dir = '/data1/zrd/datasets1/segmentation_results_refine_for_mug'
+            self.detection_dir = '/home/leech/RBP_Pose/logs/segmentation_results_refine_for_mug'
         else:
             # self.detection_dir = os.path.join(data_dir, 'detection_dualposenet/data/segmentation_results')
-            self.detection_dir = '/data1/zrd/datasets1/segmentation_results'
+            self.detection_dir = '/home/leech/RBP_Pose/logs/data/segmentation_results'
 
         assert source in ['CAMERA', 'Real', 'CAMERA+Real']
         assert mode in ['train', 'test']
